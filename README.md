@@ -50,28 +50,11 @@ Use both values to fit your design or use "auto" value together with Fill gaps o
 #### Speed
 - bigger speed = worse detail, worse adhesivity
 
-## Dual colour print configuration
-For bucket and switching filaments (no mixing at the moment)
-- Print: HQ/Speed
-- Filament: DUAL
-- Printer: DUAL
-
-## Vase mode prints guide
-#### Printer
-- Simple Vase for simple vase models without retractions
-- Strong if object is not slashed
-- HQ/Speedy if vase is relative complex object with needed retractions
-#### Filament
-- vase HD - for high details prints
-- vase BLACK - for asphaltic black colour only
-- Light Speedy - for all other colours - if it does high-temp artifacts, use dDark Speedy or Dark only.
-
 ## Complex objects guide
 #### Print settings
 - HQ/AUTO - select what is better for your model (see Preview)
 - Speedy Gonzales is faster print
 - Speedy McQueen is fastest print as possible, quality is not measure
-- Vase Paper-thin - if you need paperweight vase mode figures
 #### Filaments
 - Speed - for speed prints
 - Dark/Light - about filament colour
@@ -80,6 +63,27 @@ For bucket and switching filaments (no mixing at the moment)
 - STRONG - for strong objects, it does not have height temperature profile as others do. Reccomended with LightSpeedy filament settings, but quality is lower due high-temp artifacts while retraction
 - HQ/Speed - correspond with Print settings
 
-## Notes about material
+## Vase mode prints guide
+#### Print settings
+- vase HQ for highest quality of print
+- vase Speedy Gonzales is fast print
+- Vase Paper-thin - if you need paperweight vase mode figures
+#### Filament
+- vase HD - for high details prints
+- vase BLACK - for asphaltic black colour only
+- Light Speedy - for all other colours - if it does high-temp artifacts, use dDark Speedy or Dark only.
+#### Printer
+- Simple Vase for simple vase models without retractions
+- Strong if object is not slashed
+- HQ/Speedy if vase is relative complex object with needed retractions
 
-Profile is vor ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black. 
+## Dual colour print configuration
+For bucket and switching filaments (no mixing at the moment)
+- Print: HQ/Speed
+- Filament: DUAL
+- Printer: DUAL
+
+
+## Notes about material
+Profile is vor ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black.
+ 
