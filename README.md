@@ -1,9 +1,10 @@
-Slic3r A10M options
-===================
+Slic3r A10M 3D printer profile
+==============================
 
-## General notes
+This is folder and file structure from c:\Users\[yourname]\AppData\Roaming\Slic3r 
 
 This profile is for genuine Slic3r.org slicer development version only, which you can download it here: https://dl.slic3r.org/dev/win/
+Note that Slic3r need a lot of power to display itself, it will display slowly on machines with Atom or similar CPU.
 
 **All settings are for UNTOUCHED printer as you got it from manufacturer.** 
 
@@ -15,6 +16,7 @@ Hotbed springs need to be slightly tightened too, so you could put Z-axis switch
 
 Printing speed is limited by volumetric speed to 10mm3/s. Physical limit of path extruder gear - hotend tip is about 13-15mm3/s. Because my extruder lever is broken after few weeks, I was print another and use bigger spring. Your gears should be clean, no splinters from filament, only small amount of white dust at both sides of saw wheel and filament way is mirrorish clean.
 
+There is implemented height-temperature profile which is good for free-air printing.
 
 ## Slicer picked options
  
@@ -48,7 +50,8 @@ Use both values to fit your design or use "auto" value together with Fill gaps o
 #### Speed
 - bigger speed = worse detail, worse adhesivity
 
-## Dual colour print configuration for bucket and switching filaments (no mixing at the moment)
+## Dual colour print configuration
+For bucket and switching filaments (no mixing at the moment)
 - Print: HQ/Speed
 - Filament: DUAL
 - Printer: DUAL
@@ -76,3 +79,7 @@ Use both values to fit your design or use "auto" value together with Fill gaps o
 #### Printer
 - STRONG - for strong objects, it does not have height temperature profile as others do. Reccomended with LightSpeedy filament settings, but quality is lower due high-temp artifacts while retraction
 - HQ/Speed - correspond with Print settings
+
+## Notes about material
+
+Profile is vor ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black. 
