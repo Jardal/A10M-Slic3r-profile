@@ -4,10 +4,15 @@ Slic3r A10M options
 ## General notes
 
 This profile is for genuine Slic3r.org slicer development version only, which you can download it here: https://dl.slic3r.org/dev/win/
+
 **All settings are for UNTOUCHED printer as you got it from manufacturer.** 
+
 All values are calculated to 340 extruder steps as in A10M factory firmware. If you have calibrated values or use 430 steps, set it to factory  values.
+
 Printers need to be tightened after shipping shocks. Use only manual screwdriver to tighten all screws except the wheels at the right side of X arm. 
+
 Hotbed springs need to be slightly tightened too, so you could put Z-axis switch to 1-2mm lower position for greater stiffness.
+
 Printing speed is limited by volumetric speed to 10mm3/s. Physical limit of path extruder gear - hotend tip is about 13-15mm3/s. Because my extruder lever is broken after few weeks, I was print another and use bigger spring. Your gears should be clean, no splinters from filament, only small amount of white dust at both sides of saw wheel and filament way is mirrorish clean.
 
 
