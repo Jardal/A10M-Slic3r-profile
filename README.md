@@ -1,7 +1,7 @@
 Slic3r A10M 3D printer profile
 ==============================
 
-This is folder and file structure from c:\Users\[yourname]\AppData\Roaming\Slic3r 
+This is content of the folder and file structure from c:\Users\[yourname]\AppData\Roaming\Slic3r 
 
 This profile is for genuine Slic3r.org slicer development version only, which you can download it here: https://dl.slic3r.org/dev/win/
 Note that Slic3r need a lot of power to display itself, it will display slowly on machines with Atom or similar CPU.
@@ -10,13 +10,9 @@ Note that Slic3r need a lot of power to display itself, it will display slowly o
 
 All values are calculated to 340 extruder steps as in A10M factory firmware. If you have calibrated values or use 430 steps, set it to factory  values.
 
-Printers need to be tightened after shipping shocks. Use only manual screwdriver to tighten all screws except the wheels at the right side of X arm. 
-
-Hotbed springs need to be slightly tightened too, so you could put Z-axis switch to 1-2mm lower position for greater stiffness.
-
 Printing speed is limited by volumetric speed to 10mm3/s. Physical limit of path extruder gear - hotend tip is about 13-15mm3/s. Because my extruder lever is broken after few weeks, I was print another and use bigger spring. Your gears should be clean, no splinters from filament, only small amount of white dust at both sides of saw wheel and filament way is mirrorish clean.
 
-There is implemented height-temperature profile which is good for free-air printing.
+There is unique **implemented height-temperature response** which is good for free-air printing. I was discovered right values while printing of skewed vase mode complex models. But result is not as strong as high temperature prints.
 
 ## Slicer picked options
  
@@ -36,16 +32,16 @@ Use both values to fit your design or use "auto" value together with Fill gaps o
 - Fill density - use bigger values to make it strength
 - FIll gaps - worse print quality, better strength
 - Combine Infill - for speed-up prints
-- Infill before perimeters - use it if you need as much exact size of diameters etc.
+- Infill before perimeters - use it if you need as much exact size of diameters or when infill destroy perimeters (ABS); use low infill only (10%)
 - Only infill where needed - unchecked is for strong prints, checked acts as internal support material
 - Solid infill treshold - about 5-10 for strong vertical  sticks, 0 for selected % infill only.  
 - Solid infill every - is for better strength
 
 #### Layers
 - Use adaptive slicing - for models with many skews, Quality 75% is good for many details, 35% is good few details
-- Avoid crossing - if on, then printing quality of small details is much worse, leave it off (maybe disappear in futire)
+- Avoid crossing - if on, then printing quality of small details is much worse, leave it off (maybe disappear in future - future is now)
 - External perimeters First - if you want to have as much exact surfaces as possible.
-- Only retract when... - in rare case of simple objects it will spedd-up print
+- Only retract when... - disable it in rare case of simple objects or if you print infill only without perimeters (aka negative vase mode), enabled for spedd-up print
 
 #### Speed
 - bigger speed = worse detail, worse adhesivity
@@ -83,7 +79,34 @@ For bucket and switching filaments (no mixing at the moment)
 - Filament: DUAL
 - Printer: DUAL
 
+## Tricks
+- print models near back of build plate, it will save your cables
+- try to print "body" of the vase model by setting perimeters to zero.
+- objects could be printed as vase too if you need it for measuring if it will fit to. If object is multipart, export whole bed from Slic3r as STL
+- Support is needed only in rare case, adaptive mode prints from about 10 deg withut it.
+- Microsoft 3D Builder is not bad for editing models. But Tinkercad is better for exact construction work.
+- Geeetech in download section have Color Mixer software, try it. It supplies mixer from control Panel, but way better.
+- if you need dual coloured part, go to Settings button...
+- Each gcode file from Slic3r contain at the end whole printing configuration which could be imported to Slic3r again
+- Slic3r remember settings and you want to begin with defaults? Simply edit file slic3r.ini and delete row with last_output_path and whole sections Presets and Recent.
+- Dual colour print should be used without filament cleaning, but remember that to change colour it need about 25mm in extruder (ie., 25-50 cm of transient colour to fully change colour). You slould set same value (2 for left extruder) to Infill and Perimeter extruder in Extruders section
 
 ## Notes about material
-Profile is vor ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black.
+Profile is for ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black. Use plastics without smell, they are way better than fume filaments.
  
+## How to make good printer
+### Tighten it all
+Printers need to be tightened after shipping shocks. Use only manual screwdriver to tighten all screws and wheels except the wheels at the right side of X arm. Hotbed springs need to be slightly tightened too, so you could put Z-axis switch to 1-2mm lower position for greater stiffness. 
+### Lubricate it all
+Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gears in the extruder (except saw wheel of course).
+### Do it at the first
+- filament filter
+- dual colour bucket
+- extruder lever
+- Cable pathway helper
+- LED lightning in the top-dovn V-slot(2x 10cm LED 12V strip in series), powered from PSU, but you must know what you do, otherwise your printer will be burned.
+- fan silencer (note that for 2019/10 version is needed only one for PSU)
+
+...Files, images or links will be added later, stay tuned. 
+ 
+...formated by using https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061
