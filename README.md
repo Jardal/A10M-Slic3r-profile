@@ -17,6 +17,7 @@ There is unique **implemented height-temperature response** which is good for fr
 ## Slicer picked options
  
 #### Advanced
+- Complete individual objects - for multiple printing objects - need 37mm space between, pay attention on XY axis when place objects with height over 27mm
 - Infill/perimeter overlap - if your long bridge hairs are falling from edges, use bigger value
 - XY Size  Compensation - compensation if you need to fit together (0.05mm mean 0.2mm difference in tolerance of joined diameters)
 
@@ -54,7 +55,7 @@ Use both values to fit your design or use "auto" value together with Fill gaps o
 #### Filaments
 - Speed - for speed prints
 - Dark/Light - about filament colour
-- CARDS - for thin cards or very tiny or thin objects with small height - note that strongness is much worse.
+- CARDS - for thin cards or very tiny or thin objects with small height - note that strongness is much worse. If you print a boomerang, use Speedy Gonzales Light + STRONG
 #### Printer
 - STRONG - for strong objects, it does not have height temperature profile as others do. Reccomended with LightSpeedy filament settings, but quality is lower due high-temp artifacts while retraction
 - HQ/Speed - correspond with Print settings
@@ -82,7 +83,7 @@ For bucket and switching filaments (no mixing at the moment)
 ## Tricks
 - print models near back of build plate, it will save your cables
 - try to print "body" of the vase model by setting perimeters to zero.
-- objects could be printed as vase too if you need it for measuring if it will fit to. If object is multipart, export whole bed from Slic3r as STL
+- objects could be printed as vase too if you need it for measuring if it will fit to. If object is multipart, export whole bed from Slic3r as STL and import this file instead
 - Support is needed only in rare case, adaptive mode prints from about 10 deg withut it.
 - Microsoft 3D Builder is not bad for editing models. But Tinkercad is better for exact construction work.
 - Geeetech in download section have Color Mixer software, try it. It supplies mixer from control Panel, but way better.
@@ -93,6 +94,8 @@ For bucket and switching filaments (no mixing at the moment)
 
 ## Notes about material
 Profile is for ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black. Use plastics without smell, they are way better than fume filaments.
+
+Remember, that ABS is not able to print curves in free air as PLA wit appropriate cooling blower, bridges only.
  
 ## How to make good printer
 ### Tighten it all
