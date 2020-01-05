@@ -11,8 +11,9 @@ Note that Slic3r need a lot of power to display itself, it will display slowly o
 All values are calculated to 340 extruder steps as in A10M factory firmware. If you have calibrated values or use 430 steps, set it to factory  values.
 
 Printing speed is limited by volumetric speed to 10mm3/s. Physical limit of path extruder gear - hotend tip is about 13-15mm3/s. Because my extruder lever is broken after few weeks, I was print another and use bigger spring. Your gears should be clean, no splinters from filament, only small amount of white dust at both sides of saw wheel and filament way is mirrorish clean.
+Do not use Speedy profiles if you are unsure about extruder driver status.
 
-There is unique **implemented height-temperature response** which is good for free-air printing. I was discovered right values while printing of skewed vase mode complex models. But result is not as strong as high temperature prints.
+There is unique **implemented height-temperature response** which is good for free-air printing. I was discovered right values while printing of skewed vase mode complex models. But result is not as strong as high temperature prints.  
 
 ## Slicer picked options
  
@@ -52,6 +53,7 @@ Use both values to fit your design or use "auto" value together with Fill gaps o
 - HQ/AUTO - select what is better for your model (see Preview)
 - Speedy Gonzales is faster print
 - Speedy McQueen is fastest print as possible, quality is not measure
+- MULTI PLY 2,5mm is profile for thin multiple objects up to 2,5mm, printed in completation sequence, not at one. My A10M have vertical space between nozzle tip and PLA cooling fan mouth 2,5mm. Measure your printer first! Use with CARDS filament profile and HQ/AUTO printer.
 #### Filaments
 - Speed - for speed prints
 - Dark/Light - about filament colour
@@ -89,11 +91,15 @@ For bucket and switching filaments (no mixing at the moment)
 - Geeetech in download section have Color Mixer software, try it. It supplies mixer from control Panel, but way better.
 - if you need dual coloured part, go to Settings button...
 - Each gcode file from Slic3r contain at the end whole printing configuration which could be imported to Slic3r again
+- Each gcode file contain at the begin all settings what you set it at the right panel for future reference (and you did not need to make printscreen with settings)
 - Slic3r remember settings and you want to begin with defaults? Simply edit file slic3r.ini and delete row with last_output_path and whole sections Presets and Recent.
 - Dual colour print should be used without filament cleaning, but remember that to change colour it need about 25mm in extruder (ie., 25-50 cm of transient colour to fully change colour). You slould set same value (2 for left extruder) to Infill and Perimeter extruder in Extruders section
+- You can check gcode health with Pronterface http://kliment.kapsi.fi/printrun/ . just associate gcode files with Pronterface... See Internet Archive if link disappeared: https://web.archive.org/web/20191031020314/http://kliment.kapsi.fi/printrun/
+- Strongest pieces you will get with layers 0.2 or 0.15mm, about 10% less with thinner print and about 50% less with 0.3mm
+- Infill does not have such impact on strongness as you think. 3 perimeters and 10% infill are about 10% less than 100% infill
 
 ## Notes about material
-Profile is for ABS only. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black. Use plastics without smell, they are way better than fume filaments.
+**Profile is for ABS only**. Best colours for quality printings are white, yellow, green, light gray. Bad colors are silver, black. Use plastics without smell, they are way better than fume filaments.
 
 Remember, that ABS is not able to print curves in free air as PLA wit appropriate cooling blower, bridges only.
  
@@ -109,7 +115,33 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 - Cable pathway helper
 - LED lightning in the top-dovn V-slot(2x 10cm LED 12V strip in series), powered from PSU, but you must know what you do, otherwise your printer will be burned.
 - fan silencer (note that for 2019/10 version is needed only one for PSU)
+- use plastic shopping bag as dust shield for top of printer with filament spools
+- cover hotbed at least with sheet of paper if you leave your printer cold 
 
 ...Files, images or links will be added later, stay tuned. 
  
+## Repair parts
+- Extruder Lever
+- Extruder Nozzle tip
+- Fittings
+- PTFE (teflon) tube
+- V-slot wheels
+- GT2 belt
+- Thermistor in glass B3950 100k 1m
+- 40W/24V heater element 30mm (or 20mm)
+- 3010 24V fans
+- 4010 24V blowing fan
+- 4010 24V system unit fan
+
+## Tuning parts
+- Waste bucket for dual colour prints
+- Bed heihgt wheels
+- filament filter
+- Thumb wheels for Titan extruder lever spring
+- Cable pathway helper
+- fan silencer for PSU
+- fan silencer for system unit (not for 2019/10+ model) with 8010 12V fan and mini DC/DC step-down module
+- extruder support for tall prints 
+- Back-up UPS 700VA or more 
+
 ...formated by using https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061

@@ -1,0 +1,70 @@
+
+
+;===========================================================================
+;===  SLICING PARAMETERS  ==================================================
+;===========================================================================
+;print_preset     [print_preset]
+;filament_preset  [filament_preset]
+;printer_preset   [printer_preset]
+;SCALE            [scale]
+;===========================================================================
+;complete_objects                      [complete_objects] 
+;infill_overlap                        [infill_overlap]
+;xy_size_compensation                  [xy_size_compensation]
+
+;infill_extruder                       [infill_extruder]
+;perimeter_extruder                    [perimeter_extruder]
+;regions_overlap                       [regions_overlap]
+;solid_infill_extruder                 [solid_infill_extruder]
+;support_material_interface_extruder   [support_material_interface_extruder]
+;support_material_extruder             [support_material_extruder]
+
+;external_perimeter_extrusion_width    [external_perimeter_extrusion_width]
+;first_layer_extrusion_width           [first_layer_extrusion_width]
+;top_infill_extrusion_width            [top_infill_extrusion_width]
+
+;bottom_infill_pattern                 [bottom_infill_pattern]
+;infill_every_layers                   [infill_every_layers]
+;fill_angle                            [fill_angle]
+;fill_density                          [fill_density]
+;fill_gaps                             [fill_gaps]
+;fill_pattern                          [fill_pattern]
+;infill_first                          [infill_first]
+;infill_only_where_needed              [infill_only_where_needed]
+;solid_infill_every_layers             [solid_infill_every_layers]
+;solid_infill_below_area               [solid_infill_below_area]
+;top_infill_pattern                    [top_infill_pattern]
+
+;adaptive_slicing                      [adaptive_slicing]
+;adaptive_slicing_quality              [adaptive_slicing_quality]
+;bottom_solid_layers                   [bottom_solid_layers]
+;external_perimeters_first             [external_perimeters_first]
+;layer_height                          [layer_height]
+;only_retract_when_crossing_perimeters [only_retract_when_crossing_perimeters]
+;perimeters                            [perimeters]
+;top_solid_layers                      [top_solid_layers]
+
+;brim_ears                             [brim_ears]
+;brim_width                            [brim_width]
+;interior_brim_width                   [interior_brim_width]
+;skirts                                [skirts]
+;skirt_height                          [skirt_height]
+
+;external_perimeter_speed              [external_perimeter_speed]
+;first_layer_speed                     [first_layer_speed]
+
+;support_material_contact_distance     [support_material_contact_distance]
+;dont_support_bridges                  [dont_support_bridges]
+;support_material_enforce_layers       [support_material_enforce_layers]
+;support_material                      [support_material]
+;support_material_interface_layers     [support_material_interface_layers]
+;support_material_interface_spacing    [support_material_interface_spacing]
+;support_material_max_layers           [support_material_max_layers]
+;support_material_threshold            [support_material_threshold]
+;support_material_buildplate_only      [support_material_buildplate_only]
+;===========================================================================
+;===========================================================================
+;===========================================================================
+
+
+
