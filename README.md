@@ -7,11 +7,12 @@ This profile is for genuine Slic3r.org slicer development version only, which yo
 Note that Slic3r need a lot of power to display itself, it will display slowly on machines with Atom or similar CPU.
 
 **All settings are for UNTOUCHED printer as you got it from manufacturer.** 
+Mine printer is with black SiC surface glass which is not need to use glue or something else. Sticking is not as good as with glue, but you easily take printed parts if hotbed is under 40°C.
 
 All values are calculated to 340 extruder steps as in A10M factory firmware. If you have calibrated values or use 430 steps, set it to factory  values.
 
 Printing speed is limited by volumetric speed to 10mm3/s. Physical limit of path extruder gear - hotend tip is about 13-15mm3/s. Because my extruder lever is broken after few weeks, I was print another and use bigger spring. Your gears should be clean, no splinters from filament, only small amount of white dust at both sides of saw wheel and filament way is mirrorish clean.
-Do not use Speedy profiles if you are unsure about extruder driver status.
+Do not use Speedy profiles if you are unsure about extruder driver status. Critical value of whole path is about 4-6mm3/s, so if you are under this limit, your prints are in higher quality. Values you can check in gcode output.
 
 There is unique **implemented height-temperature response** which is good for free-air printing. I was discovered right values while printing of skewed vase mode complex models. But result is not as strong as high temperature prints.  
 
@@ -26,27 +27,30 @@ There is unique **implemented height-temperature response** which is good for fr
 options for dual material or color prints only
 
 #### Extrusion width
-Use both values to fit your design or use "auto" value together with Fill gaps option checked.
+Use values to fit your design or use "auto" value together with Fill gaps option checked. A10M AUTO have "auto" or "default" values enabled at all.
 
 #### Infill
 - Infill patterns - Hilbert is for great adhesivity of bottom side. Other use as you want.
 - FIll angle set to 90 if you want different bridge or top layer way.
-- Fill density - use bigger values to make it strength
-- FIll gaps - worse print quality, better strength
-- Combine Infill - for speed-up prints
+- Fill density - use bigger values to make it strength, but 10% and 3 shells is enough
+- FIll gaps - worse print quality, better strength, did not use it at very small or complex tiny detail objects
+- Combine Infill - for speed-up prints, less strength if values >1
 - Infill before perimeters - use it if you need as much exact size of diameters or when infill destroy perimeters (ABS); use low infill only (10%)
-- Only infill where needed - unchecked is for strong prints, checked acts as internal support material
+- Only infill where needed - unchecked is for strong prints, checked acts as internal support material - speed-up prints, less strength (about 20% less)
 - Solid infill treshold - about 5-10 for strong vertical  sticks, 0 for selected % infill only.  
-- Solid infill every - is for better strength
+- Solid infill every - is for better strength, but not as much. Use about 10 if you have horizontal holes for big screws.
 
 #### Layers
 - Use adaptive slicing - for models with many skews, Quality 75% is good for many details, 35% is good few details
 - Avoid crossing - if on, then printing quality of small details is much worse, leave it off (maybe disappear in future - future is now)
-- External perimeters First - if you want to have as much exact surfaces as possible.
+- External perimeters First - if you want to have as much exact surfaces as possible. Disable it at very small pieces if you dont want to use brim.
 - Only retract when... - disable it in rare case of simple objects or if you print infill only without perimeters (aka negative vase mode), enabled for spedd-up print
+- Bottom/Top layers - these values are as minumum, did not use less. If you print with thin layers, increase both values. More layers = more strength
+- Perimeters - 2 is too low (big impact to quality, about 20% less strength), 3 is nice. More perimeters = more strength about 2-3% only and worse quality of details, but holes with big screws you can tight more with 4-5 and 40% infill
 
 #### Speed
-- bigger speed = worse detail, worse adhesivity
+- External - bigger speed = worse detail, worse strength
+- First - if you print tiny objects, use lower value (10) for better adhesivity. At extra large objects it prevents corner warping.
 
 ## Complex objects guide
 #### Print settings
@@ -113,7 +117,7 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 - dual colour bucket
 - extruder lever
 - Cable pathway helper
-- LED lightning in the top-dovn V-slot(2x 10cm LED 12V strip in series), powered from PSU, but you must know what you do, otherwise your printer will be burned.
+- LED lightning in the top-dovn V-slot(2x 10cm LED 12V strip in series), powered from PSU, but you must know what you do, otherwise your printer will be burned. Possible version for "civilians": https://www.thingiverse.com/thing:4089189
 - fan silencer (note that for 2019/10 version is needed only one for PSU)
 - use plastic shopping bag as dust shield for top of printer with filament spools
 - cover hotbed at least with sheet of paper if you leave your printer cold 
@@ -131,6 +135,7 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 - 40W/24V heater element 30mm (or 20mm)
 - 3010 24V fans
 - 4010 24V blowing fan
+- PLA fan duct for 4010 fan
 - 4010 24V system unit fan
 
 ## Tuning parts
@@ -143,5 +148,24 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 - fan silencer for system unit (not for 2019/10+ model) with 8010 12V fan and mini DC/DC step-down module
 - extruder support for tall prints 
 - Back-up UPS 700VA or more 
+- 4020 24V blowing fan with PLA fan duct and extended drive capability to 0-255 PWH with arduino+NPN (DIY). Small flow is needed for ABS, high for PLA, but small flow 35% is too high for ABS. 
+
+## Servicing Printer
+- Clogged bowden - https://www.youtube.com/watch?v=uKxPIGal74E
+- What you often need to do if you does not have filament filter - https://www.youtube.com/watch?v=hOKSaBrxTDs
+
+## Wizard
+It is possible to make application which will create right configuration based on questions and answers. Or Machine learning/AI based analysis of object. You can do it.
+
+## Missing options in Slic3r
+with settings for A10M with black glass
+- Printer/Extruder/Wipe  [x] do not wipe first layer  [] do not wipe top layer  [x] do not wipe short tracks below [3 mm]
+- Print/Infill/Print gaps  [x] do not fill gaps on first layer  [x] do not fill gaps on top layer
+
+with settings for A10 with PEI sheet
+- Printer/Extruder/Wipe  [x] do not wipe first layer  [x] do not wipe top layer  [x] do not wipe short tracks below [3 mm]
+- Print/Infill/Print gaps  [x] do not fill gaps on first layer  [x] do not fill gaps on top layer
+
+
 
 ...formated by using https://medium.com/swlh/how-to-make-the-perfect-readme-md-on-github-92ed5771c061
