@@ -125,7 +125,7 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 ...Files, images or links will be added later, stay tuned. 
  
 ## Repair parts
-- Extruder Lever
+- Extruder Lever for print in Repair parts folder (lever which I was edited but forged from where it is - if you are original author, leave a note here)
 - Extruder Nozzle tip
 - Fittings
 - PTFE (teflon) tube
@@ -144,11 +144,12 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 - filament filter
 - Thumb wheels for Titan extruder lever spring
 - Cable pathway helper
-- fan silencer for PSU
+- fan silencer for PSU - simply resize it to 168% in slicer and tight it with one screw only. It is about 12% oversized because it is exhaust side - https://www.thingiverse.com/thing:2988448 
+  Of course you can try newer versions with phase invertors https://www.thingiverse.com/thing:2988448
 - fan silencer for system unit (not for 2019/10+ model) with 8010 12V fan and mini DC/DC step-down module
 - extruder support for tall prints 
-- Back-up UPS 700VA or more 
-- 4020 24V blowing fan with PLA fan duct and extended drive capability to 0-255 PWH with arduino+NPN (DIY). Small flow is needed for ABS, high for PLA, but small flow 35% is too high for ABS. 
+- Back-up UPS 700VA or more (not each 500VA will work)
+- 4020 24V blowing fan with PLA fan duct and extended drive capability to 0-255 PWH with arduino+NPN (DIY). Small flow is needed for ABS, high for PLA, but small flow 35% is too high for ABS with bigger fan. 
 
 ## Servicing Printer
 - Clogged bowden - https://www.youtube.com/watch?v=uKxPIGal74E
@@ -159,12 +160,14 @@ It is possible to make application which will create right configuration based o
 
 ## Missing options in Slic3r
 with settings for A10M with black glass
-- Printer/Extruder/Wipe  [x] do not wipe first layer  [] do not wipe top layer  [x] do not wipe short tracks below [3 mm]
-- Print/Infill/Print gaps  [x] do not fill gaps on first layer  [x] do not fill gaps on top layer
+- Printer/Extruder/Wipe + [x] do not wipe first layer  [] do not wipe top layer  [x] do not wipe short tracks below [3 mm]
+- Print/Infill/Print gaps + [x] do not fill gaps on first layer  [x] do not fill gaps on top layer
+- Print/Layers/External perimeters first + From layer [3] 
 
 with settings for A10 with PEI sheet
-- Printer/Extruder/Wipe  [x] do not wipe first layer  [x] do not wipe top layer  [x] do not wipe short tracks below [3 mm]
-- Print/Infill/Print gaps  [x] do not fill gaps on first layer  [x] do not fill gaps on top layer
+- Printer/Extruder/Wipe + [x] do not wipe first layer  [x] do not wipe top layer  [x] do not wipe short tracks below [3 mm]
+- Print/Infill/Print gaps + [x] do not fill gaps on first layer  [x] do not fill gaps on top layer
+- Print/Layers/External perimeters first + From layer [2] 
 
 
 
