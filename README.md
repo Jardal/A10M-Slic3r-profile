@@ -28,6 +28,11 @@ options for dual material or color prints only
 
 #### Extrusion width
 Use values to fit your design or use "auto" value together with Fill gaps option checked. A10M AUTO have "auto" or "default" values enabled at all.
+**External perimeters**
+- upright and exact sizes are best with 0.42mm width
+- universal or skewed design is best with 0.52mm but did not want exact holes (are smaller) and size in X-Y is slightly (way) bigger
+- exact sizes or skewed vase mode 0.6mm (exact with with xy compensation -0.08mm)
+- upright vase mode could be up to 0.8mm for better strongness  
 
 #### Infill
 - Infill patterns - Hilbert is for great adhesivity of bottom side. Other use as you want.
@@ -42,6 +47,7 @@ Use values to fit your design or use "auto" value together with Fill gaps option
 
 #### Layers
 - Use adaptive slicing - for models with many skews, Quality 75% is good for many details, 35% is good few details
+- layer height - 0.3mm is maximum, for some colours (silver) 0.28. Thinner layer does not as much nicer finish as you think, but 0.2 are much stronger than 0.3. More height, more External perimeter width.
 - Avoid crossing - if on, then printing quality of small details is much worse, leave it off (maybe disappear in future - future is now)
 - External perimeters First - if you want to have as much exact surfaces as possible. Disable it at very small pieces if you dont want to use brim.
 - Only retract when... - disable it in rare case of simple objects or if you print infill only without perimeters (aka negative vase mode), enabled for spedd-up print
@@ -154,6 +160,11 @@ Use gun oil to lubricate bearings and lithium vaseline to the Z-axis rod and gea
 ## Servicing Printer
 - Clogged bowden - https://www.youtube.com/watch?v=uKxPIGal74E
 - What you often need to do if you does not have filament filter - https://www.youtube.com/watch?v=hOKSaBrxTDs
+- Attention! thermistors are connected from 5V to Ain instead of Ain to GND. Easy to burn out mainboard!
+
+## Main differences A10M over generic CR10 printer
+- modularized system unit - you can replace stepper driver
+- you did not tunings - are already done
 
 ## Wizard
 It is possible to make application which will create right configuration based on questions and answers. Or Machine learning/AI based analysis of object. You can do it.
