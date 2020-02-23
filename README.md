@@ -25,6 +25,7 @@ There is unique **implemented height-temperature response** which is good for fr
 
 #### Extruders
 options for dual material or color prints only
+- Regions... overlap - give 0.05 to glue objects together or -0.25 or more to make separate objects
 
 #### Extrusion width
 Use values to fit your design or use "auto" value together with Fill gaps option checked. A10M AUTO have "auto" or "default" values enabled at all.
@@ -68,8 +69,9 @@ Use values to fit your design or use "auto" value together with Fill gaps option
 - Speed - for speed prints
 - Dark/Light - about filament colour
 - CARDS - for thin cards or very tiny or thin objects with small height - note that strongness is much worse. If you print a boomerang, use Speedy Gonzales Light + STRONG
+- STRONG - for strong, lower complexity  objects; Set Infill/perimeter overlap to 60%, xy size -0.015, perimeters width 0.52 and 0.56, fill gaps on; How it is different from LightSpeedy: fan is off, fatter extrusion multiplier, limited volumetric speed.
 #### Printer
-- STRONG - for strong objects, it does not have height temperature profile as others do. Reccomended with LightSpeedy filament settings, but quality is lower due high-temp artifacts while retraction
+- STRONG - for strong objects, it does not have height temperature profile as others do. Reccomended with LightSpeedy or STRONG filament settings, but quality is lower due high-temp artifacts while retraction
 - HQ/Speed - correspond with Print settings
 
 ## Vase mode prints guide
