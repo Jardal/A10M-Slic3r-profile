@@ -55,6 +55,21 @@ Use values to fit your design or use "auto" value together with Fill gaps option
 - Bottom/Top layers - these values are as minumum, did not use less. If you print with thin layers, increase both values. More layers = more strength
 - Perimeters - 2 is too low (big impact to quality, about 20% less strength), 3 is nice. More perimeters = more strength about 2-3% only and worse quality of details, but holes with big screws you can tight more with 4-5 and 40% infill
 
+#### Guide to change parameters by layer height
+| Layer height   | 0.3 | 0.2 - 0.25 | 0.1 - 0.15| note |
+| infill overlap | 25  | 15         |  0 | quality |
+| perimeters     | 3   | 3          |2|  at least |
+| ext perimeter width | 0.56 | 0.45 | 0.45 | best values |
+| perimeter width     | 0.56 | 0.45 | 0.45 | ... |
+| first layer width | 0.52   | 0.42 | 0.42 | ... |
+| infill extr. width | 0.56  | 0.45 | 0.45 | ... |
+| ext. perimeter speed | 30  | 30    | 25| hardness and quality |
+| top solid infill speed | 30 | 30    | 20| by mean of quality |
+| bottom solid layers| 3    | 3     | 4| at least |
+| top solid layers|    3    | 4     | 6| strength |
+| bridge flow ratio |  0.95 | 0.95  |0.8| quality |
+ 
+
 #### Speed
 - External - bigger speed = worse detail, worse strength
 - First - if you print tiny objects, use lower value (10) for better adhesivity. At extra large objects it prevents corner warping.
